@@ -33,7 +33,7 @@ function TestImage (props) {
           {items.map(item => (
             <li key={item.id}>
               <p>{item.title}</p>
-              <img src={item.url} />
+              <img alt="img" src={item.url} />
             </li>
           ))}
         </ul> 
