@@ -1,11 +1,10 @@
 import './App.css';
-import TestImage from './TestImage';
+import Todo from './feature/Todo';
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello</h1>
-      <TestImage anhTuyen={"hello"} />
+      <Todo />
     </div>
   );
 }
