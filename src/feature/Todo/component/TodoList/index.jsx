@@ -21,18 +21,31 @@ function TodoList(props) {
         props.onTodoClick(todo, idx);
     }
 
+    const deleteTodo = (idx) => {
+        props.deleteTodo(idx);
+    }
+
     return (
-        <ul>
+        <div>
             {props.todoList.map((todo, idx) => (
-                <li 
-                className={todo.status === 'completed' ? 'completed' : '' } 
+                <div 
                 key={todo.id}
-                onClick={() => handleTodoClick(todo, idx)}
                 >
-                    {todo.title}
-                </li>
+                    <span
+                        className={`${'todo'} ${todo.status === 'completed' ? 'completed' : ''}`} 
+                        onClick={() => handleTodoClick(todo, idx)}
+                        >{todo.title}
+                    </span>
+                    
+                    <a 
+                        data-id={idx} 
+                        href="#"
+                        onClick={() => deleteTodo(idx)}>
+                        Delete
+                    </a>
+                </div>
             ))}
-        </ul>
+        </div>
     );
 }
 
